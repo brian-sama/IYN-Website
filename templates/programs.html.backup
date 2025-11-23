@@ -1,0 +1,141 @@
+<h1>Our Programs</h1>
+<p>Discover the impactful programs and initiatives that empower youth across different countries</p>
+</div>
+</section>
+
+<section class="programs">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Youth Empowerment Initiatives</h2>
+            <p>Our programs are designed to develop skills, build networks, and create opportunities for young
+                leaders</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1470&q=80"
+                        alt="Youth Leadership">
+                </div>
+                <div class="program-content">
+                    <h3>Youth Leadership Program</h3>
+                    <p>Comprehensive mentorship and leadership training for emerging young leaders ready to make an
+                        impact. This program includes workshops, one-on-one mentoring, and practical community
+                        projects.</p>
+                    <a href="{% url 'join' %}" class="btn">Join This Program</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1470&q=80"
+                        alt="Community Development">
+                </div>
+                <div class="program-content">
+                    <h3>Community Development</h3>
+                    <p>Empowering youth-led initiatives that create sustainable change in local communities.
+                        Participants learn project management, community engagement, and sustainable development
+                        practices.</p>
+                    <a href="{% url 'join' %}" class="btn">Join This Program</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1470&q=80"
+                        alt="Entrepreneurship">
+                </div>
+                <div class="program-content">
+                    <h3>Entrepreneurship & Innovation</h3>
+                    <p>Supporting young entrepreneurs with training, mentorship, and seed funding opportunities.
+                        Learn business planning, financial management, and innovation strategies.</p>
+                    <a href="{% url 'join' %}" class="btn">Join This Program</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1470&q=80"
+                        alt="Digital Skills">
+                </div>
+                <div class="program-content">
+                    <h3>Digital Skills Training</h3>
+                    <p>Bridging the digital divide by providing technology education, coding skills, and digital
+                        literacy programs for youth in underserved communities.</p>
+                    <a href="{% url 'join' %}" class="btn">Join This Program</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&w=1470&q=80"
+                        alt="Environmental Sustainability">
+                </div>
+                <div class="program-content">
+                    <h3>Environmental Sustainability</h3>
+                    <p>Youth-led environmental initiatives focusing on conservation, climate action, and sustainable
+                        practices in communities across our network countries.</p>
+                    <a href="{% url 'join' %}" class="btn">Join This Program</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1470&q=80"
+                        alt="Arts & Culture">
+                </div>
+                <div class="program-content">
+                    <h3>Arts & Culture Exchange</h3>
+                    <p>Promoting cultural understanding and creative expression through arts programs, cultural
+                        exchanges, and creative collaborations between youth from different countries.</p>
+                    <a href="{% url 'join' %}" class="btn">Join This Program</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-content">
+        <div>
+            <h3>About IYN</h3>
+            <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                youth delegates from various countries.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                <li><a href="{% url 'events' %}">Events</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2025 International Youth Network. All Rights Reserved.
+    </div>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    document.querySelector(".mobile-menu").onclick = () => {
+        document.querySelector("nav ul").classList.toggle("active");
+    };
+</script>
+
+</body>
+
+</html>

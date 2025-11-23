@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - International Youth Network</title>
+    <meta name="description" content="Hear from young leaders transformed by IYN programs">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonials {
+            padding: 60px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .section-heading p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover .testimonial-image img {
+            transform: scale(1.05);
+        }
+
+        .testimonial-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            line-height: 1.6;
+            flex-grow: 1;
+            font-style: italic;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header {
+                padding: 60px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .testimonial-content {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global-background"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="{% static 'images/images.jfif' %}" alt="IYN Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="main">International Youth Network</div>
+                    <div class="sub">terre des hommes schweiz</div>
+                </div>
+            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}" class="active">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'partners' %}">Partners</a></li>
+                    <li><a href="{% url 'gallery_list' %}">Gallery</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'join' %}" class="btn">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Success Stories</h1>
+            <p>Hear from young leaders whose lives have been transformed by IYN</p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Youth Testimonials</h2>
+                <p>Real stories from young people who have been part of our network and programs</p>
+            </div>
+
+            <div class="testimonials-grid">
+                {% if testimonials %}
+                {% for testimonial in testimonials %}
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        {% if testimonial.photo %}
+                        <img src="{{ testimonial.photo.url }}" alt="{{ testimonial.name }}">
+                        {% else %}
+                        {# Placeholder images based on index #}
+                        {% if forloop.counter0|divisibleby:6 == 0 %}
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="{{ testimonial.name }}">
+                        {% elif forloop.counter0|divisibleby:6 == 1 %}
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="{{ testimonial.name }}">
+                        {% elif forloop.counter0|divisibleby:6 == 2 %}
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="{{ testimonial.name }}">
+                        {% elif forloop.counter0|divisibleby:6 == 3 %}
+                        <img src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="{{ testimonial.name }}">
+                        {% elif forloop.counter0|divisibleby:6 == 4 %}
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="{{ testimonial.name }}">
+                        {% else %}
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=300&q=80"
+                            alt="{{ testimonial.name }}">
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">{{ testimonial.name }}</div>
+                        <div class="testimonial-role">{{ testimonial.role }}</div>
+                        <p class="testimonial-text">"{{ testimonial.content }}"</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                    <p style="font-size: 1.1rem; color: var(--text-light);">No testimonials available yet. Check back
+                        soon!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>About IYN</h3>
+                <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                    youth delegates from various countries.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 International Youth Network. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelector(".mobile-menu").onclick = () => {
+            document.querySelector("nav ul").classList.toggle("active");
+        };
+    </script>
+</body>
+
+</html>

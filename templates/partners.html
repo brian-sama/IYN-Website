@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Youth Network - Partners</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-heading p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .countries-section {
+            margin-bottom: 4rem;
+        }
+
+        .countries-section h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .country-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .country-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 102, 204, 0.4);
+        }
+
+        .country-flag {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .country-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .country-card h4 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .country-card p {
+            opacity: 0.9;
+        }
+
+        .country-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .country-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .country-card:hover .country-image img {
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0 40px;
+                margin-top: 70px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global-background"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="{% static 'images/images.jfif' %}" alt="IYN Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="main">International Youth Network</div>
+                    <div class="sub">terre des hommes schweiz</div>
+                    <div class="social-links" style="margin-top: 5px; gap: 0.5rem;">
+                        <a href="#" aria-label="Facebook" title="Facebook"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" title="Instagram"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'partners' %}" class="active">Partners</a></li>
+                    <li><a href="{% url 'gallery_list' %}">Gallery</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'join' %}" class="btn">Join Us</a></li>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Partners</h1>
+            <p>Collaborating with organizations across the globe to empower youth</p>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Global Network Partners</h2>
+                <p>We collaborate with organizations and institutions across regions to empower youth and create lasting
+                    impact.</p>
+            </div>
+
+            <div class="countries-section">
+                <h3>Partner Countries</h3>
+                <div class="countries-grid">
+                    <a href="{% url 'partners_zimbabwe' %}" class="country-card">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/zw.png" alt="Zimbabwe Flag">
+                        </div>
+                        <h4>Zimbabwe</h4>
+                        <p>Explore our partners in Zimbabwe</p>
+                    </a>
+
+                    <a href="{% url 'partners_southafrica' %}" class="country-card">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/za.png" alt="South Africa Flag">
+                        </div>
+                        <h4>South Africa</h4>
+                        <p>Explore our partners in South Africa</p>
+                    </a>
+
+                    <a href="#" class="country-card"
+                        style="background: linear-gradient(135deg, #00cc99 0%, #00a67c 100%);">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/tz.png" alt="Tanzania Flag">
+                        </div>
+                        <h4>Tanzania</h4>
+                        <p>Explore our partners in Tanzania</p>
+                    </a>
+
+                    <a href="#" class="country-card"
+                        style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/mz.png" alt="Mozambique Flag">
+                        </div>
+                        <h4>Mozambique</h4>
+                        <p>Explore our partners in Mozambique</p>
+                    </a>
+
+                    <a href="#" class="country-card"
+                        style="background: linear-gradient(135deg, #ffa726 0%, #f57c00 100%);">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/ni.png" alt="Nicaragua Flag">
+                        </div>
+                        <h4>Nicaragua</h4>
+                        <p>Explore our partners in Nicaragua</p>
+                    </a>
+
+                    <a href="#" class="country-card"
+                        style="background: linear-gradient(135deg, #ab47bc 0%, #8e24aa 100%);">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/sv.png" alt="El Salvador Flag">
+                        </div>
+                        <h4>El Salvador</h4>
+                        <p>Explore our partners in El Salvador</p>
+                    </a>
+
+                    <a href="#" class="country-card"
+                        style="background: linear-gradient(135deg, #26c6da 0%, #00acc1 100%);">
+                        <div class="country-flag">
+                            <img src="https://flagcdn.com/w320/ch.png" alt="Switzerland Flag">
+                        </div>
+                        <h4>Switzerland</h4>
+                        <p>Explore our partners in Switzerland</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <h2>Strategic Partners</h2>
+                <p>Our collaboration with these organizations helps us create greater impact across our network</p>
+            </div>
+
+            <div class="countries-grid">
+                {% for partner in strategic_partners %}
+                {% if "Terre des Hommes" in partner.name %}
+                <div class="country-card"
+                    style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 25%, #ffffff 75%, #f0f7ff 100%); color: var(--text); box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);">
+                    {% if partner.logo %}
+                    <div class="country-image">
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" />
+                    </div>
+                    {% else %}
+                    <div class="country-flag">
+                        <i class="fas fa-handshake"
+                            style="font-size: 3rem; color: var(--primary); line-height: 80px;"></i>
+                    </div>
+                    {% endif %}
+                    <h4 style="color: var(--text);">{{ partner.name }}</h4>
+                    <p style="color: var(--text-light);">{{ partner.description }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>About IYN</h3>
+                <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                    youth delegates from various countries.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 International Youth Network. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelector(".mobile-menu").onclick = () => {
+            document.querySelector("nav ul").classList.toggle("active");
+        };
+    </script>
+
+</body>
+
+</html>

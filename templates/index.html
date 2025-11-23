@@ -1,0 +1,422 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Youth Network - Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Page Specific Styles */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-heading p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Network Section */
+        .network {
+            padding: 80px 0;
+            background: transparent;
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .network-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .network-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .network-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .network-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .network-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Quick Actions Section */
+        .quick-actions {
+            padding: 80px 0;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+
+        .quick-actions h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-actions>.container>p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: var(--primary) !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-actions {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .action-buttons {
+                gap: 1rem;
+            }
+
+            .action-btn {
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global-background"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="{% static 'images/images.jfif' %}" alt="IYN Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="main">International Youth Network</div>
+                    <div class="sub">terre des hommes schweiz</div>
+                    <div class="social-links" style="margin-top: 5px; gap: 0.5rem;">
+                        <a href="#" aria-label="Facebook"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'partners' %}">Partners</a></li>
+                    <li><a href="{% url 'gallery_list' %}">Gallery</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'join' %}" class="btn">Join Us</a></li>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home"
+        style="background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(0, 77, 153, 0.8)), url('{% static 'images/IMG_5648.jpg' %}');">
+        <div class="container hero-content">
+            <h1>International Youth Network</h1>
+            <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together youth
+                delegates from various countries. The network includes representatives from Zimbabwe, South Africa,
+                Tanzania, Mozambique, Nicaragua, El Salvador and Switzerland.</p>
+            <div class="hero-btns">
+                <a href="{% url 'about' %}" class="btn">Learn More</a>
+                <a href="{% url 'join' %}" class="btn btn-outline">Join Our Network</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="section-heading">
+                <h2>About IYN</h2>
+                <p>Connecting young leaders worldwide to create lasting impact in their communities</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The International Youth Network connects young leaders worldwide, offering mentorship,
+                        development pathways, and platforms for lasting impact in their communities.</p>
+                    <p>Our focus areas include leadership development, civic engagement, entrepreneurship, arts and
+                        culture, environmental sustainability, and youth wellbeing.</p>
+                    <p>We believe in the power of young people to drive meaningful change and create a more inclusive,
+                        sustainable future for all.</p>
+                    <a href="{% url 'about' %}" class="btn">Read More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=687&q=80"
+                        alt="Youth gathering">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="network">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Network</h2>
+                <p>Connecting youth across countries to share knowledge and create impact</p>
+            </div>
+            <div class="network-grid">
+                <div class="network-card">
+                    <div class="network-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Reach</h3>
+                    <p>Connecting youth from Zimbabwe, South Africa, Tanzania, Mozambique, Nicaragua, El Salvador and
+                        Switzerland.</p>
+                </div>
+                <div class="network-card">
+                    <div class="network-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Collaborative Projects</h3>
+                    <p>Youth-led initiatives that address local challenges while creating global connections and shared
+                        learning.</p>
+                </div>
+                <div class="network-card">
+                    <div class="network-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Creating spaces for young people to connect, share experiences, and build lasting relationships
+                        across borders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-actions"
+        style="background: linear-gradient(rgba(0, 102, 204, 0.9), rgba(0, 77, 153, 0.9)), url('{% static 'images/IMG_5648.jpg' %}');">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <p>Take action and become part of our global youth network</p>
+            <div class="action-buttons">
+                <a href="{% url 'join' %}" class="action-btn">Join Our Network</a>
+                <a href="{% url 'programs' %}" class="action-btn">Explore Programs</a>
+                <a href="{% url 'partners' %}" class="action-btn">Our Partners</a>
+                <a href="{% url 'contact' %}" class="action-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>About IYN</h3>
+                <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                    youth delegates from various countries.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 International Youth Network. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector(".mobile-menu").onclick = () => {
+            document.querySelector("nav ul").classList.toggle("active");
+        };
+    </script>
+
+</body>
+
+</html>

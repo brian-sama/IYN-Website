@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Youth Network - About</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-heading p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 80px 0;
+            background: transparent;
+            /* Changed to transparent for global bg */
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mission-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .mission-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0 40px;
+                margin-top: 70px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global-background"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="{% static 'images/images.jfif' %}" alt="IYN Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="main">International Youth Network</div>
+                    <div class="sub">terre des hommes schweiz</div>
+                    <div class="social-links" style="margin-top: 5px; gap: 0.5rem;">
+                        <a href="#" aria-label="Facebook"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="active">About</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'partners' %}">Partners</a></li>
+                    <li><a href="{% url 'gallery_list' %}">Gallery</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'join' %}" class="btn">Join Us</a></li>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About IYN</h1>
+            <p>Learn more about our mission, vision, and the impact we're making through youth empowerment</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The International Youth Network connects young leaders worldwide, offering mentorship,
+                        development pathways, and platforms for lasting impact in their communities.</p>
+                    <p>Our focus areas include leadership development, civic engagement, entrepreneurship, arts and
+                        culture, environmental sustainability, and youth wellbeing.</p>
+                    <p>We believe in the power of young people to drive meaningful change and create a more inclusive,
+                        sustainable future for all.</p>
+                    <a href="{% url 'join' %}" class="btn">Join Our Movement</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=687&q=80"
+                        alt="Youth gathering">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Mission & Vision</h2>
+                <p>Guiding principles that drive our work with youth across the globe</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower young people with the skills, resources, and networks needed to become effective
+                        leaders and change-makers in their communities.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>A world where young people are actively engaged in shaping their futures and creating positive
+                        social change across all sectors.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Our Approach</h3>
+                    <p>Collaborative, youth-led initiatives that combine local action with global perspectives to
+                        address pressing challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>About IYN</h3>
+                <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                    youth delegates from various countries.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 International Youth Network. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelector(".mobile-menu").onclick = () => {
+            document.querySelector("nav ul").classList.toggle("active");
+        };
+    </script>
+
+</body>
+
+</html>

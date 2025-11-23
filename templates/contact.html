@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Youth Network - Contact</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            min-width: 30px;
+        }
+
+        .contact-item div h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .contact-item div p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0 40px;
+                margin-top: 70px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global-background"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="{% static 'images/images.jfif' %}" alt="IYN Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="main">International Youth Network</div>
+                    <div class="sub">terre des hommes schweiz</div>
+                    <div class="social-links" style="margin-top: 5px; gap: 0.5rem;">
+                        <a href="#" aria-label="Facebook" title="Facebook"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" title="Instagram"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn"
+                            style="width: 24px; height: 24px; font-size: 0.8rem; background: var(--primary);"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'partners' %}">Partners</a></li>
+                    <li><a href="{% url 'gallery_list' %}">Gallery</a></li>
+                    <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+                    <li><a href="{% url 'join' %}" class="btn">Join Us</a></li>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with the International Youth Network team</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@internationalyouthnetwork.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+263 774 668 432</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Headquarters</h3>
+                            <p>Terre des Hommes Schweiz<br>
+                                Basel, Switzerland</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM (Central African Time)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <h2>Send Us A Message</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input id="name" class="form-control" type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" class="form-control" type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input id="subject" class="form-control" type="text" placeholder="Enter subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Write your message here..."
+                            required></textarea>
+                    </div>
+                    <button class="btn" type="submit" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>About IYN</h3>
+                <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                    youth delegates from various countries.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 International Youth Network. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelector(".mobile-menu").onclick = () => {
+            document.querySelector("nav ul").classList.toggle("active");
+        };
+    </script>
+
+</body>
+
+</html>

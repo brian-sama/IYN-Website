@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners in Zimbabwe - International Youth Network</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .country-partners {
+            padding: 100px 0 60px;
+            background: var(--surface);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .country-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+
+        .country-header h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .country-header .country-flag {
+            width: 60px;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .country-header .country-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .country-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .partner-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .partner-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .partner-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .partner-location i {
+            color: var(--primary);
+        }
+
+        .partner-mandate h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .partner-mandate h4:before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .partner-mandate p {
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        /* Focus areas tags */
+        .focus-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .focus-tag {
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .country-partners {
+                padding: 80px 0 40px;
+            }
+
+            .country-header h2 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .partner-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .partner-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .partner-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="{% static 'images/images.jfif' %}" alt="IYN Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="main">International Youth Network</div>
+                    <div class="sub">terre des hommes schweiz</div>
+                </div>
+            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'partners' %}" class="active">Partners</a></li>
+                    <li><a href="{% url 'gallery_list' %}">Gallery</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'join' %}" class="btn">Join Us</a></li>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="country-partners">
+        <div class="container">
+            <a href="{% url 'partners' %}" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Partners
+            </a>
+
+            <div class="country-header">
+                <h2>
+                    <div class="country-flag">
+                        <img src="https://flagcdn.com/w320/zw.png" alt="Zimbabwe Flag">
+                    </div>
+                    Our Partners in Zimbabwe
+                </h2>
+                <p>Working together with local organizations to empower Zimbabwean youth through education, skills
+                    development, and community engagement.</p>
+            </div>
+
+            {% for partner in partners %}
+            <div class="partner-card">
+                <div class="partner-header">
+                    <div class="partner-logo">
+                        {% if partner.logo %}
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                        {% else %}
+                        <div
+                            style="width: 100%; height: 100%; background: var(--background); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-handshake" style="font-size: 3rem; color: var(--text-light);"></i>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="partner-info">
+                        <h3>{{ partner.name }}</h3>
+                        <div class="partner-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>{{ partner.country.name }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-mandate">
+                    <h4>Organization Mandate</h4>
+                    <p>{{ partner.description }}</p>
+                    {% if partner.website %}
+                    <div style="margin-top: 1rem;">
+                        <a href="{{ partner.website }}" target="_blank" class="btn"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">Visit Website</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div style="text-align: center; padding: 4rem; color: var(--text-light);">
+                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <h3>No partners found</h3>
+                <p>We are currently updating our partner list for Zimbabwe.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>About IYN</h3>
+                <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                    youth delegates from various countries.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                    <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 International Youth Network. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelector(".mobile-menu").onclick = () => {
+            document.querySelector("nav ul").classList.toggle("active");
+        };
+    </script>
+
+</body>
+
+</html>

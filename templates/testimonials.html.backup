@@ -1,0 +1,145 @@
+<h1>Success Stories</h1>
+<p>Hear from young leaders whose lives have been transformed by IYN</p>
+</div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Youth Testimonials</h2>
+            <p>Real stories from young people who have been part of our network and programs</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                        alt="Tanaka Moyo">
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Tanaka Moyo</div>
+                    <div class="testimonial-role">Youth Entrepreneur, Zimbabwe</div>
+                    <p class="testimonial-text">"IYN gave me the confidence and skills to start my own social
+                        enterprise. Through their mentorship program, I learned how to turn my passion for education
+                        into a sustainable business that now serves over 500 students in my community."</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+                        alt="Thabo Ndlovu">
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Thabo Ndlovu</div>
+                    <div class="testimonial-role">Community Leader, South Africa</div>
+                    <p class="testimonial-text">"Being part of IYN connected me with like-minded youth leaders
+                        across Africa. The network has been instrumental in helping me launch community development
+                        projects that address unemployment and skills development in my township."</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
+                        alt="Rumbi Chikwanha">
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Rumbi Chikwanha</div>
+                    <div class="testimonial-role">Advocacy Coordinator, Zimbabwe</div>
+                    <p class="testimonial-text">"IYN empowered me to find my voice and advocate for youth rights at
+                        both local and international levels. I've had the opportunity to speak at regional forums
+                        and influence policies that directly affect young people."</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?auto=format&fit=crop&w=400&q=80"
+                        alt="Sipho Mthembu">
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Sipho Mthembu</div>
+                    <div class="testimonial-role">Tech Innovator, South Africa</div>
+                    <p class="testimonial-text">"The entrepreneurship program gave me access to resources and
+                        mentorship that helped me develop a mobile app addressing health challenges in rural
+                        communities. IYN believed in my vision when others didn't."</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80"
+                        alt="Chipo Mutasa">
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Chipo Mutasa</div>
+                    <div class="testimonial-role">Environmental Activist, Zimbabwe</div>
+                    <p class="testimonial-text">"Through IYN, I found a platform to amplify my environmental
+                        conservation work. The network helped me organize youth climate action campaigns that
+                        reached thousands of young people across the region."</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+                        alt="Mandla Khumalo">
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Mandla Khumalo</div>
+                    <div class="testimonial-role">Arts Program Director, South Africa</div>
+                    <p class="testimonial-text">"IYN's arts and culture program opened doors I never imagined
+                        possible. I've been able to mentor young artists and create platforms for youth expression
+                        through music, dance, and visual arts."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-content">
+        <div>
+            <h3>About IYN</h3>
+            <p>The International Youth Network is a project under Terre Des Hommes Schweiz that brings together
+                youth delegates from various countries.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="{% url 'programs' %}">Our Programs</a></li>
+                <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+                <li><a href="{% url 'events' %}">Events</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2025 International Youth Network. All Rights Reserved.
+    </div>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone=263774668432&text=Hello!%20International%20Youth%20Network%20I%20would%20like%20to%20learn%20more%20about.."
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    document.querySelector(".mobile-menu").onclick = () => {
+        document.querySelector("nav ul").classList.toggle("active");
+    };
+</script>
+
+</body>
+
+</html>
